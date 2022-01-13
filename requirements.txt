@@ -1,0 +1,4 @@
+colorama==0.4.3
+discord.py==1.7.3
+pyfade==3.1
+requests==2.22.0
