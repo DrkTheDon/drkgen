@@ -31,7 +31,9 @@ def clearcmd():
     os.system('cls' if os.name == 'nt' else 'clear')
 def back():
     input(f"{Fore.YELLOW}Press enter to go back.")
-
+def underdev():
+    print(f"{Fore.RED}{curtime}{Fore.LIGHTWHITE_EX} This is currently under development.")
+    back()
 def options():
     print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red, """
    V. 0.9 Alpha (January 13th 2022)
@@ -87,7 +89,7 @@ def generators():
   ''')
     print("""
     [1] Amazon Giftcard Generator
-    [2] Netflix Giftcard Generator
+    [2] Netflix Giftcard Generator (Under Development)
     [3] Roblox Giftcard Generator
     [4] Apple Giftcard Generator
     [5] Steam Giftcard Generator
@@ -104,19 +106,26 @@ def generators():
         clearcmd()
         amazon()
     elif USER_OPTION == "2":
-        pass
+        underdev()
+        generators()
     elif USER_OPTION == "3":
-        pass
+        clearcmd()
+        roblox()
     elif USER_OPTION == "4":
-        pass
+        underdev()
+        generators()
     elif USER_OPTION == "5":
-        pass
+        underdev()
+        generators()
     elif USER_OPTION == "6":
-        pass
+        underdev()
+        generators()
     elif USER_OPTION == "7":
-        pass
+        underdev()
+        generators()
     elif USER_OPTION == "8":
-        pass
+        underdev()
+        generators()
     elif USER_OPTION == "9":
         clearcmd()
         options()
@@ -161,7 +170,79 @@ def amazon():
     print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards")
     back()
     generators()
-     
+def netflix():
+    CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
+     DRK GEN (V.0.9)
+    ███╗   ██╗███████╗████████╗███████╗██╗     ██╗██╗  ██╗     ██████╗ ███████╗███╗   ██╗
+    ████╗  ██║██╔════╝╚══██╔══╝██╔════╝██║     ██║╚██╗██╔╝    ██╔════╝ ██╔════╝████╗  ██║
+    ██╔██╗ ██║█████╗     ██║   █████╗  ██║     ██║ ╚███╔╝     ██║  ███╗█████╗  ██╔██╗ ██║
+    ██║╚██╗██║██╔══╝     ██║   ██╔══╝  ██║     ██║ ██╔██╗     ██║   ██║██╔══╝  ██║╚██╗██║
+    ██║ ╚████║███████╗   ██║   ██║     ███████╗██║██╔╝ ██╗    ╚██████╔╝███████╗██║ ╚████║
+    ╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝     ╚══════╝╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝╚═╝  ╚═══╝                                                                                                                                            
+    """))
+    print(f"""{Fore.LIGHTWHITE_EX}     [ Made by {Fore.YELLOW}drk#1337 {Fore.LIGHTWHITE_EX}]{Fore.GREEN} DRK GENERATOR PROJECT
+  {Fore.LIGHTWHITE_EX}
+  """)
+    print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
+    time.sleep(1)
+    print(f"\nAmazon Giftcard Format is: {Fore.YELLOW}XXXX-XXXXXX-XXXXX\n")
+    howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
+
+    with open("./generated/amazon.txt", "w+") as file:
+        for i in range(int(howmany)):
+            firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
+            secondrandom = ''.join(random.choice(CHARACTERS) for i in range(int(6)))
+            thirdrandom = ''.join(random.choice(CHARACTERS) for i in range(int(5)))
+
+            result = firstrandom + "-" + secondrandom + "-" + thirdrandom 
+            file.write(result)
+            file.write("\n")
+    print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Generating..")
+    time.sleep(1)
+    file.close()
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/amazon.txt")
+    back()
+    clearcmd()
+    generators()
+def roblox():
+    CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
+     DRK GEN (V.0.9)
+    ██████╗  ██████╗ ██████╗ ██╗      ██████╗ ██╗  ██╗     ██████╗ ███████╗███╗   ██╗
+    ██╔══██╗██╔═══██╗██╔══██╗██║     ██╔═══██╗╚██╗██╔╝    ██╔════╝ ██╔════╝████╗  ██║
+    ██████╔╝██║   ██║██████╔╝██║     ██║   ██║ ╚███╔╝     ██║  ███╗█████╗  ██╔██╗ ██║
+    ██╔══██╗██║   ██║██╔══██╗██║     ██║   ██║ ██╔██╗     ██║   ██║██╔══╝  ██║╚██╗██║
+    ██║  ██║╚██████╔╝██████╔╝███████╗╚██████╔╝██╔╝ ██╗    ╚██████╔╝███████╗██║ ╚████║
+    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝     ╚═════╝ ╚══════╝╚═╝  ╚═══╝                                                                                                                                                                                                                       
+    """))
+    print(f"""{Fore.LIGHTWHITE_EX}     [ Made by {Fore.YELLOW}drk#1337 {Fore.LIGHTWHITE_EX}]{Fore.GREEN} DRK GENERATOR PROJECT
+  {Fore.LIGHTWHITE_EX}
+  """)
+    print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
+    time.sleep(1)
+    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXX-XXXX-XXXX-XXXX\n")
+    howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
+
+    with open("./generated/roblox.txt", "w+") as file:
+        for i in range(int(howmany)):
+            firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
+            secondrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
+            thirdrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
+            fourthrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
+
+            result = firstrandom + "-" + secondrandom + "-" + thirdrandom + "-" + fourthrandom
+            file.write(result)
+            file.write("\n")
+    print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Generating..")
+    time.sleep(1)
+    file.close()
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/roblox.txt")
+    back()
+    clearcmd()
+    generators()
+
+
 # Main Code
 def main():
     clearcmd()
