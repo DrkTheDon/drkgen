@@ -34,6 +34,7 @@ def back():
 def underdev():
     print(f"{Fore.RED}{curtime}{Fore.LIGHTWHITE_EX} This is currently under development.")
     back()
+    clearcmd()
 def options():
     print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red, """
    V. 0.9 Alpha (January 13th 2022)
@@ -89,7 +90,7 @@ def generators():
   ''')
     print("""
     [1] Amazon Giftcard Generator
-    [2] Netflix Giftcard Generator (Under Development)
+    [2] Netflix Giftcard Generator
     [3] Roblox Giftcard Generator
     [4] Apple Giftcard Generator
     [5] Steam Giftcard Generator
@@ -112,17 +113,17 @@ def generators():
         clearcmd()
         roblox()
     elif USER_OPTION == "4":
-        underdev()
-        generators()
+        clearcmd()
+        apple()
     elif USER_OPTION == "5":
-        underdev()
-        generators()
+        clearcmd()
+        steam()
     elif USER_OPTION == "6":
-        underdev()
-        generators()
+        clearcmd()
+        googleplay()
     elif USER_OPTION == "7":
-        underdev()
-        generators()
+        clearcmd()
+        spotify()
     elif USER_OPTION == "8":
         underdev()
         generators()
@@ -169,6 +170,7 @@ def amazon():
     file.close()
     print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards")
     back()
+    clearcmd()
     generators()
 def netflix():
     CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
@@ -186,14 +188,14 @@ def netflix():
   """)
     print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
     time.sleep(1)
-    print(f"\nAmazon Giftcard Format is: {Fore.YELLOW}XXXX-XXXXXX-XXXXX\n")
+    print(f"\nNetflix Giftcard Format is: {Fore.YELLOW}XXXX-XXXXXX-XXXX\n")
     howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
 
-    with open("./generated/amazon.txt", "w+") as file:
+    with open("./generated/netflix.txt", "w+") as file:
         for i in range(int(howmany)):
             firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
             secondrandom = ''.join(random.choice(CHARACTERS) for i in range(int(6)))
-            thirdrandom = ''.join(random.choice(CHARACTERS) for i in range(int(5)))
+            thirdrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
 
             result = firstrandom + "-" + secondrandom + "-" + thirdrandom 
             file.write(result)
@@ -201,7 +203,7 @@ def netflix():
     print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Generating..")
     time.sleep(1)
     file.close()
-    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/amazon.txt")
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/netflix.txt")
     back()
     clearcmd()
     generators()
@@ -210,7 +212,7 @@ def roblox():
     print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
      DRK GEN (V.0.9)
     ██████╗  ██████╗ ██████╗ ██╗      ██████╗ ██╗  ██╗     ██████╗ ███████╗███╗   ██╗
-    ██╔══██╗██╔═══██╗██╔══██╗██║     ██╔═══██╗╚██╗██╔╝    ██╔════╝ ██╔════╝████╗  ██║
+    ██╔══██╗██╔═══██╗██╔══██╗██║     ██╔═══██╗╚██╗██╔╝    ██╔════╝ ██╔════╝████╗  ██║       
     ██████╔╝██║   ██║██████╔╝██║     ██║   ██║ ╚███╔╝     ██║  ███╗█████╗  ██╔██╗ ██║
     ██╔══██╗██║   ██║██╔══██╗██║     ██║   ██║ ██╔██╗     ██║   ██║██╔══╝  ██║╚██╗██║
     ██║  ██║╚██████╔╝██████╔╝███████╗╚██████╔╝██╔╝ ██╗    ╚██████╔╝███████╗██║ ╚████║
@@ -242,10 +244,154 @@ def roblox():
     clearcmd()
     generators()
 
+def apple():
+    CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
+     DRK GEN (V.0.9)
+     █████╗ ██████╗ ██████╗ ██╗     ███████╗     ██████╗ ███████╗███╗   ██╗
+    ██╔══██╗██╔══██╗██╔══██╗██║     ██╔════╝    ██╔════╝ ██╔════╝████╗  ██║
+    ███████║██████╔╝██████╔╝██║     █████╗      ██║  ███╗█████╗  ██╔██╗ ██║
+    ██╔══██║██╔═══╝ ██╔═══╝ ██║     ██╔══╝      ██║   ██║██╔══╝  ██║╚██╗██║
+    ██║  ██║██║     ██║     ███████╗███████╗    ╚██████╔╝███████╗██║ ╚████║
+    ╚═╝  ╚═╝╚═╝     ╚═╝     ╚══════╝╚══════╝     ╚═════╝ ╚══════╝╚═╝  ╚═══╝                                                                                                                                                                                                                                                                                   
+    """))
+    print(f"""{Fore.LIGHTWHITE_EX}     [ Made by {Fore.YELLOW}drk#1337 {Fore.LIGHTWHITE_EX}]{Fore.GREEN} DRK GENERATOR PROJECT
+  {Fore.LIGHTWHITE_EX}
+  """)
+    print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
+    time.sleep(1)
+    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXXXXXXXXXXXXXX\n")
+    howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
+
+    with open("./generated/apple.txt", "w+") as file:
+        for i in range(int(howmany)):
+            firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(16)))
+
+            result = firstrandom
+            file.write(result)
+            file.write("\n")
+    print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Generating..")
+    time.sleep(1)
+    file.close()
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/apple.txt")
+    back()
+    clearcmd()
+    generators()
+
+def steam():
+    CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
+     DRK GEN (V.0.9)
+    ███████╗████████╗███████╗ █████╗ ███╗   ███╗     ██████╗ ███████╗███╗   ██╗
+    ██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗ ████║    ██╔════╝ ██╔════╝████╗  ██║
+    ███████╗   ██║   █████╗  ███████║██╔████╔██║    ██║  ███╗█████╗  ██╔██╗ ██║
+    ╚════██║   ██║   ██╔══╝  ██╔══██║██║╚██╔╝██║    ██║   ██║██╔══╝  ██║╚██╗██║
+    ███████║   ██║   ███████╗██║  ██║██║ ╚═╝ ██║    ╚██████╔╝███████╗██║ ╚████║
+    ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═════╝ ╚══════╝╚═╝  ╚═══╝                                                                                                                                                                                                                                                                                                                                               
+    """))
+    print(f"""{Fore.LIGHTWHITE_EX}     [ Made by {Fore.YELLOW}drk#1337 {Fore.LIGHTWHITE_EX}]{Fore.GREEN} DRK GENERATOR PROJECT
+  {Fore.LIGHTWHITE_EX}
+  """)
+    print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
+    time.sleep(1)
+    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXXX-XXXXX-XXXXX\n")
+    howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
+
+    with open("./generated/steam.txt", "w+") as file:
+        for i in range(int(howmany)):
+            firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(16)))
+
+            result = firstrandom
+            file.write(result)
+            file.write("\n")
+    print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Generating..")
+    time.sleep(1)
+    file.close()
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/steam.txt")
+    back()
+    clearcmd()
+    generators()
+
+def googleplay():
+    CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
+     DRK GEN (V.0.9)
+     ██████╗  ██████╗  ██████╗  ██████╗ ██╗     ███████╗    ██████╗      ██████╗ ███████╗███╗   ██╗
+    ██╔════╝ ██╔═══██╗██╔═══██╗██╔════╝ ██║     ██╔════╝    ██╔══██╗    ██╔════╝ ██╔════╝████╗  ██║
+    ██║  ███╗██║   ██║██║   ██║██║  ███╗██║     █████╗█████╗██████╔╝    ██║  ███╗█████╗  ██╔██╗ ██║
+    ██║   ██║██║   ██║██║   ██║██║   ██║██║     ██╔══╝╚════╝██╔═══╝     ██║   ██║██╔══╝  ██║╚██╗██║
+    ╚██████╔╝╚██████╔╝╚██████╔╝╚██████╔╝███████╗███████╗    ██║         ╚██████╔╝███████╗██║ ╚████║                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    """))
+    print(f"""{Fore.LIGHTWHITE_EX}     [ Made by {Fore.YELLOW}drk#1337 {Fore.LIGHTWHITE_EX}]{Fore.GREEN} DRK GENERATOR PROJECT
+  {Fore.LIGHTWHITE_EX}
+  """)
+    print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
+    time.sleep(1)
+    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXXXXXXXXXXXXXX\n")
+    howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
+
+    with open("./generated/googleplay.txt", "w+") as file:
+        for i in range(int(howmany)):
+            firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(16)))
+
+            result = firstrandom
+            file.write(result)
+            file.write("\n")
+    print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Generating..")
+    time.sleep(1)
+    file.close()
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/googleplay.txt")
+    back()
+    clearcmd()
+    generators()
+
+def spotify():
+    CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
+     DRK GEN (V.0.9)
+    ███████╗██████╗  ██████╗ ████████╗██╗███████╗██╗   ██╗     ██████╗ ███████╗███╗   ██╗
+    ██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝██║██╔════╝╚██╗ ██╔╝    ██╔════╝ ██╔════╝████╗  ██║
+    ███████╗██████╔╝██║   ██║   ██║   ██║█████╗   ╚████╔╝     ██║  ███╗█████╗  ██╔██╗ ██║
+    ╚════██║██╔═══╝ ██║   ██║   ██║   ██║██╔══╝    ╚██╔╝      ██║   ██║██╔══╝  ██║╚██╗██║
+    ███████║██║     ╚██████╔╝   ██║   ██║██║        ██║       ╚██████╔╝███████╗██║ ╚████║
+    ╚══════╝╚═╝      ╚═════╝    ╚═╝   ╚═╝╚═╝        ╚═╝        ╚═════╝ ╚══════╝╚═╝  ╚═══╝                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    """))
+    print(f"""{Fore.LIGHTWHITE_EX}     [ Made by {Fore.YELLOW}drk#1337 {Fore.LIGHTWHITE_EX}]{Fore.GREEN} DRK GENERATOR PROJECT
+  {Fore.LIGHTWHITE_EX}
+  """)
+    print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
+    time.sleep(1)
+    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXX-XXXX-XXXX-XXXX-XXXX-XX\n")
+    howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
+
+    with open("./generated/spotify.txt", "w+") as file:
+        for i in range(int(howmany)):
+            firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(16)))
+
+            result = firstrandom
+            file.write(result)
+            file.write("\n")
+    print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Generating..")
+    time.sleep(1)
+    file.close()
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Successfully generated {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Giftcards in ./generated/spotfiy.txt")
+    back()
+    clearcmd()
+    generators()
+
+
+
+
+
 
 # Main Code
 def main():
-    clearcmd()
-    options()
+    try:
+        clearcmd()
+        options()
+    except KeyboardInterrupt:
+        print(f"{Fore.RED}{curtime} CTRL + C detected, Going back to the main menu!")
+        time.sleep(1)
+        options()
 
 main()
