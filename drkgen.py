@@ -260,7 +260,7 @@ def apple():
   """)
     print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
     time.sleep(1)
-    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXXXXXXXXXXXXXX\n")
+    print(f"\nApple Giftcard Format is: {Fore.YELLOW}XXXXXXXXXXXXXXXX\n")
     howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
 
     with open("./generated/apple.txt", "w+") as file:
@@ -294,7 +294,7 @@ def steam():
   """)
     print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
     time.sleep(1)
-    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXXX-XXXXX-XXXXX\n")
+    print(f"\nSteam Giftcard Format is: {Fore.YELLOW}XXXXX-XXXXX-XXXXX\n")
     howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
 
     with open("./generated/steam.txt", "w+") as file:
@@ -327,7 +327,7 @@ def googleplay():
   """)
     print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
     time.sleep(1)
-    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXXXXXXXXXXXXXX\n")
+    print(f"\nGoogle Play Giftcard Format is: {Fore.YELLOW}XXXXXXXXXXXXXXXX\n")
     howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
 
     with open("./generated/googleplay.txt", "w+") as file:
@@ -361,7 +361,7 @@ def spotify():
   """)
     print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Setting Up...")
     time.sleep(1)
-    print(f"\nRoblox Giftcard Format is: {Fore.YELLOW}XXXX-XXXX-XXXX-XXXX-XXXX-XX\n")
+    print(f"\Spotify Giftcard Format is: {Fore.YELLOW}XXXX-XXXX-XXXX-XXXX-XXXX-XX\n")
     howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] How many tokens do you want to generate, THIS WILL REMOVE PREVIOUS GIFTCARDS: ")
 
     with open("./generated/spotify.txt", "w+") as file:
@@ -378,9 +378,6 @@ def spotify():
     back()
     clearcmd()
     generators()
-
-
-
 
 
 
