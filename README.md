@@ -1,5 +1,5 @@
 # Dark Generator
-A wide AOI generator tool.
+A wide AOI generator tool for giftcards. Made by drk.
 
 ## Information
 ![Preview](/assets/preview.png)
